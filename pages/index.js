@@ -11,6 +11,8 @@ export default function Home() {
         try {
             const parsedJson = JSON.parse(jsonInput);
             const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/bfhl`, parsedJson);
+            console.log(`${process.env.NEXT_PUBLIC_BACKEND_URL}/bfhl`);
+            
             setResponse(res.data);
             setError('');
         } catch (err) {
@@ -36,6 +38,7 @@ export default function Home() {
                 style={{color:"black"}}
             />
             <button onClick={handleSubmit}>Submit</button>
+            {console.log(`${process.env.NEXT_PUBLIC_BACKEND_URL}/bfhl`)}
             {error && <p style={{color: 'red'}}>{error}</p>}
             {response && (
                 <div style={{color:"black"}}>
