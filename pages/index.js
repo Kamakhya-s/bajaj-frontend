@@ -12,7 +12,9 @@ export default function Home() {
             const parsedJson = JSON.parse(jsonInput);
             const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/bfhl`, parsedJson);
             console.log(`${process.env.NEXT_PUBLIC_BACKEND_URL}/bfhl`);
-            
+            console.log('Backend URL:', process.env.NEXT_PUBLIC_BACKEND_URL);
+console.log('Final URL:', `${process.env.NEXT_PUBLIC_BACKEND_URL}/bfhl`);
+
             setResponse(res.data);
             setError('');
         } catch (err) {
